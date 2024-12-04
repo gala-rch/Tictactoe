@@ -1,0 +1,20 @@
+[
+{
+  "directory": "C:/Users/Gala/Documents/cours/prog/Tictactoe/build",
+  "command": "C:\\Winlibs\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\main.dir\\src\\main.cpp.obj -c C:\\Users\\Gala\\Documents\\cours\\prog\\Tictactoe\\src\\main.cpp",
+  "file": "C:/Users/Gala/Documents/cours/prog/Tictactoe/src/main.cpp",
+  "output": "CMakeFiles/main.dir/src/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/Gala/Documents/cours/prog/Tictactoe/build",
+  "command": "C:\\Winlibs\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\main.dir\\src\\Player.cpp.obj -c C:\\Users\\Gala\\Documents\\cours\\prog\\Tictactoe\\src\\Player.cpp",
+  "file": "C:/Users/Gala/Documents/cours/prog/Tictactoe/src/Player.cpp",
+  "output": "CMakeFiles/main.dir/src/Player.cpp.obj"
+},
+{
+  "directory": "C:/Users/Gala/Documents/cours/prog/Tictactoe/build",
+  "command": "C:\\Winlibs\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\main.dir\\src\\game.cpp.obj -c C:\\Users\\Gala\\Documents\\cours\\prog\\Tictactoe\\src\\game.cpp",
+  "file": "C:/Users/Gala/Documents/cours/prog/Tictactoe/src/game.cpp",
+  "output": "CMakeFiles/main.dir/src/game.cpp.obj"
+}
+]

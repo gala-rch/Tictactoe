@@ -8,5 +8,5 @@ set(CMAKE_CXX_STANDARD 17)
 project(IMAC_project)
 
 # On indique que l'on veut créer un exécutable "helloImac" compilé à partir du fichier helloImac.cpp
-add_executable(exo1 src/exo1.cpp)
+add_executable(main src/main.cpp src/Player.cpp src/game.cpp )
 
