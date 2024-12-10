@@ -1,5 +1,6 @@
 #include "game.hpp"
 #include <iostream>
+#include "Player.hpp"
 
 void draw_board(const char board[9])
 {
@@ -52,10 +53,97 @@ bool un_gagnant(const char board[9], char symbol)
 bool tableau_plein(const char board[9])
 {
     for (int i = 0; i < 9; ++i) {
-        // Si une case contient un caractère numérique, le tableau n'est pas plein
         if (board[i] >= '1' && board[i] <= '9') {
             return false;
         }
     }
     return true;
+}
+
+void play_game(char board[9], Player player1, Player player2)
+{
+    draw_board(board);
+    Player current_player = player1;
+    bool game_over = false;
+
+    while (!game_over)
+    {
+        int position;
+        std::cout << current_player.name << " (" << current_player.symbol << "), choisissez une case (1-9) : ";
+        std::cin >> position;
+
+        if (position < 1 || position > 9 || board[position - 1] == 'X' || board[position - 1] == 'O')
+        {
+            std::cout << "Position invalide ou déjà occupée. Essayez à nouveau.\n";
+            continue;
+        }
+
+        board[position - 1] = current_player.symbol;
+        draw_board(board);
+
+        if (un_gagnant(board, current_player.symbol))
+        {
+            std::cout << "Félicitations, " << current_player.name << " ! Vous avez gagné !\n";
+            game_over = true;
+        } 
+        else if (tableau_plein(board)) 
+        {
+            std::cout << "C'est un match nul !\n";
+            game_over = true;
+        }
+        else
+        {
+            current_player = (current_player.symbol == player1.symbol) ? player2 : player1;
+        }
+
+    }
+
+}
+
+void play_game_with_ai(char board[9], Player player, Player ai)
+{
+    draw_board(board);
+    Player current_player = player;
+    bool game_over = false;
+
+    while (!game_over) 
+    {
+        int position;
+
+        if (current_player.name == "IA") 
+        {
+            do {position = rand() % 9 + 1;} 
+            while (board[position - 1] == 'X' || board[position - 1] == 'O');
+            std::cout << "L'IA joue en position " << position << ".\n";
+        } 
+        else 
+        {
+            std::cout << current_player.name << " (" << current_player.symbol << "), choisissez une case (1-9) : ";
+            std::cin >> position;
+
+            if (position < 1 || position > 9 || board[position - 1] == 'X' || board[position - 1] == 'O') 
+            {
+                std::cout << "Position invalide ou déjà occupée. Essayez à nouveau.\n";
+                continue;
+            }
+        }
+
+        board[position - 1] = current_player.symbol;
+        draw_board(board);
+
+        if (un_gagnant(board, current_player.symbol)) 
+        {
+            std::cout << "Félicitations, " << current_player.name << " ! Vous avez gagné !\n";
+            game_over = true;
+        } 
+        else if (tableau_plein(board)) 
+        {
+            std::cout << "C'est un match nul !\n";
+            game_over = true;
+        } 
+        else
+        {
+            current_player = (current_player.name == player.name) ? ai : player;
+        }
+    }
 }

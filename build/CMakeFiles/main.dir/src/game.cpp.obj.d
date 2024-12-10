@@ -144,4 +144,5 @@ CMakeFiles/main.dir/src/game.cpp.obj: \
  C:/Winlibs/mingw64/include/c++/14.2.0/bits/basic_ios.tcc \
  C:/Winlibs/mingw64/include/c++/14.2.0/bits/ostream.tcc \
  C:/Winlibs/mingw64/include/c++/14.2.0/istream \
- C:/Winlibs/mingw64/include/c++/14.2.0/bits/istream.tcc
+ C:/Winlibs/mingw64/include/c++/14.2.0/bits/istream.tcc \
+ C:\Users\Gala\Documents\cours\prog\Tictactoe\src\Player.hpp
