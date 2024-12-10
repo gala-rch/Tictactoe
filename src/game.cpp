@@ -49,9 +49,11 @@ bool un_gagnant(const char board[9], char symbol)
 
 
 
-bool tableau_plein(const char board[9]) {
+bool tableau_plein(const char board[9])
+{
     for (int i = 0; i < 9; ++i) {
-        if (board[i] == ' ') {
+        // Si une case contient un caractère numérique, le tableau n'est pas plein
+        if (board[i] >= '1' && board[i] <= '9') {
             return false;
         }
     }
