@@ -24,24 +24,28 @@ bool un_gagnant(const char board[9], char symbol)
 {
 
     for (int i = 0; i < 9; i += 3) {
-        if (board[i] == symbol && board[i + 1] == symbol && board[i + 2] == symbol) {
+        if (board[i] == symbol && board[i + 1] == symbol && board[i + 2] == symbol) 
+        {
             return true;
         }
     }
 
 
     for (int i = 0; i < 3; ++i) {
-        if (board[i] == symbol && board[i + 3] == symbol && board[i + 6] == symbol) {
+        if (board[i] == symbol && board[i + 3] == symbol && board[i + 6] == symbol) 
+        {
             return true;
         }
     }
 
  
-    if (board[0] == symbol && board[4] == symbol && board[8] == symbol) {
+    if (board[0] == symbol && board[4] == symbol && board[8] == symbol)
+    {
         return true;
     }
 
-    if (board[2] == symbol && board[4] == symbol && board[6] == symbol) {
+    if (board[2] == symbol && board[4] == symbol && board[6] == symbol) 
+    {
         return true;
     }
 
@@ -53,7 +57,8 @@ bool un_gagnant(const char board[9], char symbol)
 bool tableau_plein(const char board[9])
 {
     for (int i = 0; i < 9; ++i) {
-        if (board[i] >= '1' && board[i] <= '9') {
+        if (board[i] >= '1' && board[i] <= '9') 
+        {
             return false;
         }
     }
